@@ -2,15 +2,10 @@
 
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue)
 ![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Filled-orange)
-![Scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?logo=scikit-learn&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?logo=pandas&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-%23FF4B4B.svg?logo=Streamlit&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-008080?logo=xgboost&logoColor=white)
+![Gradio](https://img.shields.io/badge/Gradio-%23FF4B4B.svg?logo=Gradio&logoColor=white)
 
-نظام لتوقع سعر المنازل باستخدام تعلم الآلة، استنادًا إلى مسابقة [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) من Kaggle.
-
-## 📸 عرض تفاعلي (Gradio)
-تم بناء واجهة تفاعلية باستخدام Gradio.  
-(أو: يمكن تشغيل التطبيق محليًا كما هو موضح بالأسفل)
+نظام متقدم لتوقع أسعار المنازل باستخدام تعلم الآلة، استنادًا إلى مسابقة [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) من Kaggle.
 
 ## 🚀 الأداء
 | النموذج | RMSE (Validation) | R² |
@@ -19,21 +14,24 @@
 | LightGBM | 0.1316 | ~0.86 |
 | RandomForest | 0.1424 | ~0.85 |
 
+## 🌐 جرب التطبيق التفاعلي
+[🚀 افتح التطبيق الآن](https://huggingface.co/spaces/ibrahimelfiki93/house-price-prediction)
+
 ## 🛠️ التقنيات المستخدمة
 - Python, Pandas, NumPy
 - Scikit-learn (Linear, Ridge, Lasso, Random Forest, XGBoost, LightGBM)
-- Pipeline & ColumnTransformer
-- OneHotEncoder, StandardScaler
+- Pipeline & ColumnTransformer مع StandardScaler وOneHotEncoder
 - GridSearchCV for Hyperparameter Tuning
-- Gradio for Interactive App
+- Gradio for Interactive Web App
+- Hugging Face Spaces for Deployment
 
 ## 📁 هيكل المشروع
 ```
 House_Price_Prediction/
 │
-├── House_Price_Prediction_Project.ipynb    # الكود الكامل
-├── submission.csv                          # ملف التنبؤ للتسليم
-├── house_price_model.pkl                   # النموذج المُدرّب
+├── House_Price_Prediction_Project.ipynb    # الكود الكامل للمشروع
+├── submission.csv                          # ملف التنبؤ للتسليم على كاجل
+├── house_price_model.pkl                   # النموذج الفائز (XGBoost) بعد التحسين
 ├── README.md                               # هذا الملف
 └── PROJECT_DESCRIPTION.txt                 # شرح مفصل بالعربية
 ```
@@ -55,17 +53,20 @@ House_Price_Prediction/
    jupyter notebook House_Price_Prediction_Project.ipynb
    ```
 
-## 🖥️ تشغيل التطبيق التفاعلي
+## 🖥️ تشغيل التطبيق التفاعلي محليًا
 ```bash
 python app.py
 ```
-أو استخدم Gradio مباشرة في الـ Notebook.
 
-## 📄 متطلبات
+## 📄 المتطلبات
 - Python 3.7+
-- pandas, numpy, scikit-learn, xgboost, lightgbm, gradio
+- pandas, numpy, scikit-learn==1.4.2, xgboost, gradio
+
+## 💡 ملاحظة مهمة حول الإصدارات
+تم بناء النموذج باستخدام إصدار حديث من `scikit-learn`، لكن تم تعديله ليعمل بإصدار `1.4.2` لضمان التوافق والاستقرار عند النشر. هذا يضمن أن التطبيق يعمل دون أخطاء على أي بيئة.
 
 ## 🙏 الشكر والتقدير
-مشروع تخرج تم تنفيذه بعناية، يدمج بين التنظيف، النمذجة، والتطبيق العملي.
+مشروع تخرج تم تنفيذه بدقة عالية، يدمج بين التنظيف، النمذجة، والنشر العملي.  
+"التعلم الآلة ليس سحرًا، بل علم دقيق وممنهج."
 
-> "التعلم الآلي ليس سحرًا، بل علم دقيق وممنهج." – فريق العمل
+🔗 [رابط GitHub](https://github.com/ibrahimelfiki93/House_Price_Prediction_Project)
